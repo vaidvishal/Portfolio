@@ -1,0 +1,253 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        top: -100px;
+    }
+    to {
+        top: 0;
+    }
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-left: 2px solid #fff;
+    padding-left: 10px;
+}
+
+header nav ul li:first-child a {
+    border-left: none;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ffa500;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+header .navbar-name {
+    color: #fff;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.container {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    padding: 20px;
+    background-color: black;
+    color: #333;
+    font-size: 1.5rem;
+    min-height: calc(100vh - 140px);
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: 1.5rem;
+}
+
+h2 {
+    color: #444;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 20px;
+    color: #555;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p, ul {
+    line-height: 1.8;
+}
+
+p {
+    color: #555;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Skill Animation */
+.skill {
+    margin: 10px 0;
+}
+
+.skill p {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.skill .progress-bar {
+    position: relative;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill .progress {
+    height: 100%;
+    background-color: var(--progress-color);
+    width: 0;
+    animation: loadSkill 2s ease-in-out forwards;
+}
+
+@keyframes loadSkill {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--skill-percentage);
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        bottom: -100px;
+    }
+    to {
+        bottom: 0;
+    }
+}
+
+.social-icons a {
+    margin: 0 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.5);
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+    header nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    header .navbar-name {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    ul, p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li a {
+        font-size: 1rem;
+    }
+
+    header .navbar-name {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
